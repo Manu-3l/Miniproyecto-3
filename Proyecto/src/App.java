@@ -1,5 +1,13 @@
+import controlador.ControladorJuego;
+import modelo.Juego;
+import vista.VistaJuegoGUI;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Juego modelo = new Juego();
+
+        VistaJuegoGUI vistaGUI = new VistaJuegoGUI();
+        ControladorJuego controlador = new ControladorJuego(modelo, vistaGUI);
+        controlador.mostrarInterfaz();
     }
 }
