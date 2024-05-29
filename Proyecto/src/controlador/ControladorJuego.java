@@ -22,11 +22,11 @@ public class ControladorJuego implements ActionListener{
         this.vista = vista;
     }
 
-    public void mostrar(){
-        vista.showInterface(this);
+    public void mostrarInterfaz(){
+        vista.mostrarInterfaz(this);
     }
 
-    public void compare(){
+    public void comparar(){
         Juego jugador = new Juego();
         jugador.setJugador(vista.getJugador());
         jugador.setJugada(vista.getJugada());
@@ -38,7 +38,7 @@ public class ControladorJuego implements ActionListener{
         if(juegos.get(juegos.size() - 1).getJugada() == "PAPEL" && juegos.get(juegos.size()).getJugada() == "PAPEL"){
             juegos.get(juegos.size() - 1).setResultado("EMPATE");
             juegos.get(juegos.size()).setResultado("EMPATE");
-            vista.showResults("Nadie gano, empate");            
+            vista.mostrarResultados("Nadie gano, empate");            
         }else if(juegos.get(juegos.size() - 1).getJugada() == "TIJERA" && juegos.get(juegos.size()).getJugada() == "TIJERA"){
             juegos.get(juegos.size() - 1).setResultado("EMPATE");
             juegos.get(juegos.size()).setResultado("EMPATE");
@@ -48,19 +48,19 @@ public class ControladorJuego implements ActionListener{
         }else if(juegos.get(juegos.size() - 1).getJugada() == "PAPEL" && juegos.get(juegos.size()).getJugada() == "PIEDRA"){
             juegos.get(juegos.size() - 1).setResultado("GANA");
             juegos.get(juegos.size()).setResultado("PIERDE");
-            vista.showResults("Ganador: " + juegos.get(juegos.size() - 1).getJugador());
+            vista.mostrarResultados("Ganador: " + juegos.get(juegos.size() - 1).getJugador());
         }else if(juegos.get(juegos.size() - 1).getJugada() == "TIJERA" && juegos.get(juegos.size()).getJugada() == "PAPEL"){
             juegos.get(juegos.size() - 1).setResultado("GANA");
             juegos.get(juegos.size()).setResultado("PIEDRA");
-            vista.showResults("Ganador: " + juegos.get(juegos.size() - 1).getJugador());
+            vista.mostrarResultados("Ganador: " + juegos.get(juegos.size() - 1).getJugador());
         }else if(juegos.get(juegos.size() - 1).getJugada() == "PIEDRA" && juegos.get(juegos.size()).getJugada() == "TIJERA"){
             juegos.get(juegos.size() - 1).setResultado("GANA");
             juegos.get(juegos.size()).setResultado("PIERDE");
-            vista.showResults("Ganador: " + juegos.get(juegos.size() - 1).getJugador());
+            vista.mostrarResultados("Ganador: " + juegos.get(juegos.size() - 1).getJugador());
         }else{
             juegos.get(juegos.size() - 1).setResultado("PIERDE");
             juegos.get(juegos.size()).setResultado("GANA");
-            vista.showResults("Ganador: " + juegos.get(juegos.size()).getJugador());            
+            vista.mostrarResultados("Ganador: " + juegos.get(juegos.size()).getJugador());            
         }
         return;
 
@@ -68,8 +68,8 @@ public class ControladorJuego implements ActionListener{
 
 
     @Override
-    public void actionPerformed(ActionEvent arg0) {
-        compare();
+    public void actionPerformed(ActionEvent e) {
+        comparar();
     }
     
 }
