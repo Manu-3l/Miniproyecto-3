@@ -6,8 +6,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         Juego modelo = new Juego();
 
-        VistaJuegoGUI vistaGUI = new VistaJuegoGUI();
-        ControladorJuego controlador = new ControladorJuego(modelo, vistaGUI);
+        VistaJuegoGUI vistaJuego = new VistaJuegoGUI();
+        ControladorJuego controlador = new ControladorJuego(modelo, vistaJuego);
         controlador.mostrarInterfaz();
     }
 }
