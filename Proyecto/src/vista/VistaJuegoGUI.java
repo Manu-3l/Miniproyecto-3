@@ -76,7 +76,7 @@ public class VistaJuegoGUI extends JFrame implements VistaJuego{
         btnPiedra.setForeground(new Color(255, 255, 255));
         btnPiedra.addActionListener(new ActionListener (){
             public void actionPerformed (ActionEvent evt){
-                controlador.setJugada("Piedra");
+                controlador.setJugada("piedra");
             }
         });
 
@@ -87,18 +87,18 @@ public class VistaJuegoGUI extends JFrame implements VistaJuego{
         btnPapel.setForeground(new Color(255, 255, 255));
         btnPapel.addActionListener(new ActionListener (){
             public void actionPerformed (ActionEvent evt){
-                controlador.setJugada("Papel");
+                controlador.setJugada("papel");
             }
         });
 
         btnTijera = new JButton();
         btnTijera.setBounds(670, 460, 90, 30);
-        btnTijera.setText("TIJERA");
+        btnTijera.setText("TIJERAS");
         btnTijera.setBackground(new Color(170, 60, 255));
         btnTijera.setForeground(new Color(255, 255, 255));
         btnTijera.addActionListener(new ActionListener (){
             public void actionPerformed (ActionEvent evt){
-                controlador.setJugada("Tijera");
+                controlador.setJugada("tijeras");
             }
         });
 

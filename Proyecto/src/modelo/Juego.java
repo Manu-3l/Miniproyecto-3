@@ -38,25 +38,34 @@ public class Juego {
     }
 
     public String jugar(String jugadaUsuario) {
-        String[] jugadas = {"Piedra", "Papel", "Tijera"};
+        String[] jugadas = {"piedra", "papel", "tijeras"};
         String jugadaIA = jugadas[(int) (Math.random() * 3)];
         String resultado;
 
-        if (jugadaUsuario.equals(jugadaIA)) {
-            resultado = (" \n" + "¡EMPATE!   Ambos eligieron " + jugadaUsuario + " \n" + " \n");
-        } else if ((jugadaUsuario.equals("Piedra") && jugadaIA.equals("Tijera")) ||
-                (jugadaUsuario.equals("Papel") && jugadaIA.equals("Piedra")) ||
-                (jugadaUsuario.equals("Tijera") && jugadaIA.equals("Papel"))) {
-            resultado = (" \n" + "¡GANASTE!   " + jugadaUsuario + " vence a " + jugadaIA + " \n" + " \n");
-        } else {
-            resultado = (" \n" + "¡PERDISTE!   " + jugadaIA + " vence a " + jugadaUsuario + " \n" + " \n");
+        if(jugadaUsuario.equals("piedra") ||
+         jugadaUsuario.equals("papel") ||
+         jugadaUsuario.equals("tijeras")){
+
+            if (jugadaUsuario.equals(jugadaIA)) {
+                System.out.println("------------------------------------------------------------");
+                resultado = (" \n" + "¡EMPATE!   Ambos eligieron " + jugadaUsuario + "\n");
+            } else if ((jugadaUsuario.equals("piedra") && jugadaIA.equals("tijeras")) ||
+                    (jugadaUsuario.equals("papel") && jugadaIA.equals("piedra")) ||
+                    (jugadaUsuario.equals("tijeras") && jugadaIA.equals("papel"))) {
+                System.out.println("------------------------------------------------------------");
+                resultado = (" \n" + "¡GANASTE!   " + jugadaUsuario + " vence a " + jugadaIA + "\n");
+            } else {
+                System.out.println("------------------------------------------------------------");
+                resultado = (" \n" + "¡PERDISTE!   " + jugadaIA + " vence a " + jugadaUsuario + "\n");
+            }
+            return resultado;
+
+        }else{
+
+            System.out.println("------------------------------------------------------------");
+            resultado = ("Digitaste algo mal");
+            return resultado;
+            
         }
-
-        return resultado;
-    }
-
-
-    
-
-    
+}
 }
